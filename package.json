@@ -1,0 +1,48 @@
+{
+  "name": "n8n-nodes-corpusiq",
+  "version": "0.1.0",
+  "description": "Use CorpusIQ from n8n: ask questions across your connected business tools (Google Analytics, Stripe, Shopify, HubSpot, Gmail and 40+ more) through the Model Context Protocol.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "mcp",
+    "corpusiq",
+    "business-intelligence",
+    "ai"
+  ],
+  "license": "MIT",
+  "homepage": "https://docs.corpusiq.io/connect-chatgpt-to-business-data",
+  "author": {
+    "name": "CorpusIQ",
+    "email": "media@corpusiq.io",
+    "url": "https://www.corpusiq.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CorpusIQ/n8n-nodes-corpusiq.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && node scripts/verify-build.mjs",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "test:live": "node scripts/live-call.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/CorpusIQApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/CorpusIQ/CorpusIQ.node.js"
+    ]
+  },
+  "devDependencies": {
+    "n8n-workflow": "*",
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  }
+}
